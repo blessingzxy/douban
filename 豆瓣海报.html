@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>img作业</title>
+	<style>
+		.divbg { 
+			width: 1000px;
+			height: 1000px;
+			margin: 10px auto;
+		}
+		.imgdiv { 
+			width: 200px;
+			height: 250px;
+			float: left;
+			border:1px solid black;
+			text-align: center;
+			margin: 20px;
+			position: relative;
+		}
+		.imgdiv img {
+			width: 200px;
+			height: 200px;
+		}
+		.imgdiv span { 
+			display: block;
+		 	margin: 5px;
+		}
+		.btn { 
+			width: 80px;
+			height: 25px; 
+		}
+		#d3 { 
+			font-size: 100px;
+			line-height: 250px;
+		}
+		.btn1 { 
+			position: absolute;
+			top: 0;
+			left: 180px;
+			border-radius: 50%;
+			border: none;
+		}
+		#d3,.btn1:hover { 
+			cursor: pointer; 
+		}
+		/* 头部 */
+		#top-1 { 
+			width: 100%;
+			height: 150px;
+			background: rgb(240,243,245);
+			min-width: 1000px;
+		}
+		#top-2 { 
+			width: 100%;
+			height: 30px;
+			background: rgb(85,87,83);
+		}
+		.top-2-1 {
+			float: left;
+			width: 55px;height: 30px;
+			font-size: 12px;
+			color: #ccc;
+			line-height: 30px;
+			text-align: center;
+		}
+		.top-2-1 img { 
+			position: relative;
+			top: -3px; 
+		}
+		.top-2-2 {  
+			float: right;
+			width: 50px;
+			height: 30px;
+			font-size: 12px;
+			color: #ccc;
+			line-height: 30px;
+			text-align: center;
+		}
+		.top-2-2:last-child { 
+			width: 100px;
+		}
+		.top-2-2 img {  
+			position: relative;
+			left: -80px;
+			display: none;
+		}
+		.top-2-2[name=kehuduan]:hover img{ 
+			display: block; 
+		}
+		#top-3 { 
+			width: 1000px;
+			height: 50px;
+			margin:20px auto 0 auto;
+		}
+		#top-3 b { 
+			font-size: 30px;
+			color: #268dcd;
+		}
+		#top-3 input[type=text] { 
+			width: 430px;
+			height: 25px;
+			position: relative;
+			top: -5px;
+		}
+		#top-3 input[type=button] { 
+			width: 40px;
+			height: 29px;
+			background-image: url(res/8.png);
+			border: none;
+			position: relative;
+			top: 2px;
+			left: -4px;
+			border-top-right-radius:5px;
+			 border-bottom-right-radius:5px;
+		}
+		.top-4-1 { 
+			float: left;
+			font-size: 12px;
+			color:  #27a;
+			text-align: center;
+			padding:10px;
+		}
+		#top-5 { 
+			height: 20px;
+			margin: 5px auto;
+			width: 1000px;
+		}
+		#top-4-5 { 
+			width: 100%;
+			border-top:1px solid rgb(228,234,236);
+			margin-top: 5px; 
+		}
+	</style>
+</head>
+<body>
+	<div id="top-1">
+		<div id="top-2">
+			<div class="top-2-1">豆瓣</div>
+			<div class="top-2-1">读书</div>
+			<div class="top-2-1">电影</div>
+			<div class="top-2-1">音乐</div>
+			<div class="top-2-1">同城</div>
+			<div class="top-2-1">小组</div>
+			<div class="top-2-1">阅读</div>
+			<div class="top-2-1">FM</div>
+			<div class="top-2-1">东西</div>
+			<div class="top-2-1">市集
+				<img src="res/new-market-tip.png" alt=""width="16px">
+			</div>
+			<div class="top-2-1">更多</div>
+			<div class="top-2-2">注册</div>
+			<div class="top-2-2">登录</div>
+			<div class="top-2-2"name="kehuduan">下载客户端
+				<img src="res/5.png" alt="">
+			</div>
+		</div>
+		<div id="top-3">
+			<b>豆瓣电影</b>
+			<input type="text">
+			<input type="button"value="">
+		</div>
+		<div id="top-4">
+			<div id="top-4-5">
+				<div id="top-5">
+				<div class="top-4-1">影讯&购票</div>
+				<div class="top-4-1">选电影</div>
+				<div class="top-4-1">电视剧</div>
+				<div class="top-4-1">排行榜</div>
+				<div class="top-4-1">分类</div>
+				<div class="top-4-1">影评</div>
+				<div class="top-4-1">2015年度榜单</div>
+				<div class="top-4-1">豆瓣观影报告</div>
+			</div>
+			</div>
+			
+		</div>
+	</div>
+</body>
+	<script>
+	// 创建数组 保存图片地址
+		var data = [
+			{url:"res/0.jpg",title:"电影1"},
+			{url:"res/1.jpg",title:"电影2"},
+			{url:"res/2.jpg",title:"电影3"},
+			{url:"res/3.jpg",title:"电影4"},
+			{url:"res/4.jpg",title:"电影5"},
+			{url:"res/5.jpg",title:"电影6"},
+			{url:"res/6.jpg",title:"电影7"},
+			{url:"res/7.jpg",title:"电影8"},
+			{url:"res/8.jpg",title:"电影9"},
+			{url:"res/9.jpg",title:"电影10"},
+			{url:"res/10.jpg",title:"电影11"},
+			{url:"res/11.jpg",title:"电影12"},
+		];
+		// 创建大的div
+		var divbg = document.createElement("div");
+		divbg.className = "divbg";
+		// 循环创建小的div 并把图片 按钮 添加进去
+		for (var i = 0; i < 12; i++) {
+			var div1 = document.createElement("div");
+			div1.setAttribute("class","imgdiv");
+			var img = document.createElement("img");
+			img.src = data[i].url;
+			var btnx = document.createElement("input");
+			btnx.className = "btn1";
+			btnx.setAttribute("type","button");
+			btnx.value = "x";
+			var span = document.createElement("span");
+			span.innerHTML = data[i].title;
+			var btn = document.createElement("input");
+			btn.setAttribute("type","button");
+			btn.className = "btn";
+			btn.value = "选座购票";
+			div1.appendChild(img);
+			div1.appendChild(btnx);
+			div1.appendChild(span);
+			div1.appendChild(btn);
+			divbg.appendChild(div1);
+		}
+		// 创建添加图片的div
+		var div3 = document.createElement("div");
+		div3.className = "imgdiv";
+		div3.id = "d3";
+		div3.innerHTML = "➕";
+		divbg.appendChild(div3);
+		// 把大的div和添加图片的div放进body里
+		document.body.appendChild(divbg);
+		// 为添加div添加点击事件 每点击一次创建一个新的div img button 并添加到大的div里
+		var d3 = document.getElementById("d3");
+		d3.onclick = function () {
+			var adddiv = document.createElement("div");
+			adddiv.setAttribute("class","imgdiv");
+			var addimg = document.createElement("img");
+			var btnx = document.createElement("input");
+			btnx.className = "btn1";
+			btnx.setAttribute("type","button");
+			btnx.value = "x";
+			var span = document.createElement("span");
+			span.innerHTML = "新来的图片";
+			var btn = document.createElement("input");
+			btn.setAttribute("type","button");
+			btn.className = "btn";
+			btn.value = "选座购票";
+			addimg.src = "res/13.jpg";
+			adddiv.appendChild(addimg);
+			adddiv.appendChild(btnx);
+			adddiv.appendChild(span);
+			adddiv.appendChild(btn);
+			divbg.insertBefore(adddiv,d3);
+		}
+		// 为button按钮 添加删除事件 
+		var btn1 = document.getElementsByClassName("btn1");
+		for (var i = 0; i < btn1.length; i++){
+			btn1[i].onclick = function (i) {
+					this.parentNode.remove();
+				}
+			};
+
+	</script>
+
+</html>

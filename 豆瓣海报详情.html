@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>豆瓣海报</title>
+	<style>
+		* { margin: 0; padding: 0; }
+
+		/* 头部 */
+		#top-1 { 
+			width: 100%;
+			height: 150px;
+			background: rgb(240,243,245);
+			min-width: 1000px; 
+		}
+		#top-2 { 
+			width: 100%;
+			height: 30px;
+			background: rgb(85,87,83); 
+		}
+		.top-2-1 { 
+			float: left;
+			width: 55px;
+			height: 30px;
+			font-size: 12px;
+			color: #ccc;
+			line-height: 30px;
+			text-align: center;
+		}
+		.top-2-1 img { 
+			position: relative;
+			top: -3px; 
+		}
+		.top-2-2 { 
+			float: right;
+			width: 50px;
+			height: 30px;
+			font-size: 12px;
+			color: #ccc;
+			line-height: 30px;
+			text-align: center;
+		}
+		.top-2-2:last-child { 
+			width: 100px; 
+		}
+		.top-2-2 img { 
+			position: relative;
+			left: -80px;
+			display: none;
+		}
+		.top-2-2[name=kehuduan]:hover img{ 
+			display: block; 
+		}
+		#top-3 { 
+			width: 1000px;
+			height: 50px; 
+			margin:20px auto 0 auto;
+		}
+		#top-3 b { 
+			font-size: 30px;
+			color: #268dcd; 
+		}
+		#top-3 input[type=text] { 
+			width: 430px;
+			height: 25px; 
+			position: relative;
+			top: -5px;
+		}
+		#top-3 input[type=button] { 
+			width: 40px;
+			height: 29px;
+			background-image: url(res/8.png);
+			border: none;
+			 position: relative;
+			 top: 5px;
+			 left: -4px;
+			 border-top-right-radius:5px; 
+			 border-bottom-right-radius:5px;
+		}
+		.top-4-1 { 
+			float: left;
+			font-size: 12px;
+			color:#27a;
+			text-align: center;
+			padding:10px;
+		}
+		#top-5 { 
+			height: 20px;
+			margin: 5px auto; 
+			width: 1000px;
+		}
+		#top-4-5 { 
+			width: 100%;
+			border-top:1px solid rgb(228,234,236); 
+			margin-top: 5px; 
+		}
+		/* 身体 */
+		 #shenti { 
+		 	width: 1000px;
+		 	height: 100%;
+		 	margin:10px auto;
+		 }
+		 #left	{ 
+		 	width: 600px;
+		 	height: 500px; 
+		 	margin-top: 20px; 
+		 }
+		 h1 { 
+		 	font-size: 24px; 
+		 }
+		 span { 
+		 	font-size: 14px;
+		 	display: inline-block; 
+		 }
+		 span:first-child { 
+		 	float: left; 
+		 }
+		  span:last-child { 
+		  	float: right;
+		  	margin-top: 20px; 
+		  }
+		 #s1 { 
+		 	margin-left:160px; 
+		 	margin-top: 20px;
+		 }
+		 #s1:hover { 
+		 	cursor: pointer; 
+		 }
+		 #s2:hover { 
+		 	cursor: pointer; 
+		 }
+		 #s2 { 
+		 	margin-right: 140px;  
+		 }
+		 #img { 
+		 	margin-top: 20px;
+		 	width: 600px;
+		 	height: 400px;
+		 	position: relative; 
+		 }
+		 #img1 { 
+		 	position: absolute; 
+		 }
+		 #btn3 { 
+		 	width: 70px;
+		 	height: 30px;
+		 	border:none; 
+		 	background-color:rgb(240,243,245);
+		 }
+	/* 底部 */
+		/* 底部 */
+		#dibu { 
+			width: 1000px; 
+			height: 90px;
+			margin: 20px auto;
+			border:1px solid black;
+		}
+		#dibu img { 
+			width: 1000px; 
+			height: 90px; 
+		}
+		#end{ 
+			width: 1000px; 
+			height: 30px;
+			margin: 30px auto; 
+			border-top: 1px dashed rgb(218,218,218);
+		} 
+		#span1 { 
+			float: left; 
+			font-size: 10px;
+		}
+		#span2 { 
+			float: right; 
+			font-size: 12px;
+			color: #27a;
+		}
+		#span1,#span2 { 
+			display:inline-block; 
+			margin-top: 10px; 
+		}
+	
+		#totop { 
+			font-size: 60px; 
+			position: fixed;
+			left: 10px; 
+			bottom: 500px;
+			display: none; 
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	<!-- 头部 -->
+	<div id="top-1">
+		<div id="top-2">
+			<div class="top-2-1">豆瓣</div>
+			<div class="top-2-1">读书</div>
+			<div class="top-2-1">电影</div>
+			<div class="top-2-1">音乐</div>
+			<div class="top-2-1">同城</div>
+			<div class="top-2-1">小组</div>
+			<div class="top-2-1">阅读</div>
+			<div class="top-2-1">FM</div>
+			<div class="top-2-1">东西</div>
+			<div class="top-2-1">市集
+				<img src="res/new-market-tip.png" alt=""width="16px">
+			</div>
+			<div class="top-2-1">更多</div>
+				
+			<div class="top-2-2">注册</div>
+			<div class="top-2-2">登录</div>
+			<div class="top-2-2"name="kehuduan">下载客户端
+				<img src="res/5.png" alt="">
+			</div>
+		</div>
+		<div id="top-3">
+			<b>豆瓣电影</b>
+			<input type="text">
+			<input type="button"value="">
+		</div>
+		<div id="top-4">
+			<div id="top-4-5">
+				<div id="top-5">
+				<div class="top-4-1">影讯&购票</div>
+				<div class="top-4-1">选电影</div>
+				<div class="top-4-1">电视剧</div>
+				<div class="top-4-1">排行榜</div>
+				<div class="top-4-1">分类</div>
+				<div class="top-4-1">影评</div>
+				<div class="top-4-1">2015年度榜单</div>
+				<div class="top-4-1">豆瓣观影报告</div>
+			</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- 身体 -->
+	<div id="shenti">
+		<div id="left">
+			<h1>血战钢锯岭 的剧照</h1>
+			<span id="s3">第1张／总共9张</span>
+			<span id="s1">上一张</span>
+			<span id="s2">下一张</span>
+			<span>>浏览所有剧照</span>
+			<div id="img"><img src="res/1.jpg" alt="" id="img1"></div>
+		</div>
+		<input type="button" value="返回首页" id="btn3">
+	</div>
+<!-- 底部 -->
+	<div class="clear"></div>
+
+	<div id="dibu">
+		<img src="res/35.jpg" alt="">
+	</div>
+
+	<div id="end">
+		<span id="span1">© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司</span>
+		<span id="span2">关于豆瓣 · 在豆瓣工作 · 联系我们 · 免责声明 · 帮助中心 · 移动应用 · 豆瓣广告</span>
+	</div>
+
+</body>
+<script>
+	var imgdata = ["0.jpg","1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg",];
+	var btn2 = document.querySelector("#s2");
+	var  i = 0;
+	
+	btn2.addEventListener("click",function(){
+		if (i==8) {
+			i = 0;
+			location.assign("豆瓣海报详情.html?no="+i);
+		}else{
+			i++;
+			location.assign("豆瓣海报详情.html?no="+i);
+		}
+		
+			
+	});
+	var btn1 = document.querySelector("#s1");
+	btn1.addEventListener("click",function(){
+		if (i==0) {
+			i = 8;
+			location.assign("豆瓣海报详情.html?no="+i);
+		}else{
+			i--;
+			location.assign("豆瓣海报详情.html?no="+i);
+		}
+		
+	});
+
+
+	if (location.search != ""){
+		var search = location.href.split("?");
+		var imgno = Number(search[1].split("=")[1]);
+		var imgurl = imgdata[imgno];
+		var img = document.querySelector("#img1");
+		img.onload = function(){
+			var bili = 1;
+			if (img.width>600||img.height>400){
+				if(img.width/600>img.height/400){
+					bili = img.width/600;
+					img.width /= bili;
+				}else{
+					bili = img.height/400;
+					img.height /= bili;
+				}
+			}
+			img.style.top = "calc(50% - " + (img.height/2) +"px)";
+			img.style.left = "calc(50% - " + (img.width/2) +"px)";	
+		}
+		i = imgno;
+		img.src = "res/"+imgurl;
+		var s3 = document.querySelector("#s3");
+		s3.innerHTML = "第"+ (i+1) +"张／总共9张";
+	}
+
+	var btn3 = document.getElementById("btn3");
+	btn3.onclick = function (){
+		location.href = "豆瓣电影主页.html";
+	}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</html>

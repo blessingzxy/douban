@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>豆瓣网页</title>
+	<style>
+		* { margin: 0; padding: 0; }
+
+		/* 头部 */
+		#top-1 { 
+			width: 100%;
+			height: 150px;
+			background: rgb(240,243,245);
+			min-width: 1000px; 
+		}
+		#top-2 { 
+			width: 100%;
+			height: 30px;
+			background: rgb(85,87,83); 
+		}
+		.top-2-1 { 
+			float: left;
+			width: 55px;
+			height: 30px;
+			font-size: 12px;
+			color: #ccc;
+			line-height: 30px;
+			text-align: center;
+		}
+		.top-2-1 img { 
+			position: relative;
+			top: -3px; 
+		}
+		.top-2-2 { 
+			float: right;
+			width: 50px;
+			height: 30px;
+			font-size: 12px;
+			color: #ccc;
+			line-height: 30px;
+			text-align: center;
+		}
+		.top-2-2:last-child { 
+			width: 100px; 
+		}
+		.top-2-2 img { 
+			position: relative;
+			left: -80px;
+			display: none;
+		}
+		.top-2-2[name=kehuduan]:hover img{ 
+			display: block; 
+		}
+		#top-3 { 
+			width: 1000px;
+			height: 50px; 
+			margin:20px auto 0 auto;
+		}
+		#top-3 b { 
+			font-size: 30px;
+			color: #268dcd; 
+		}
+		#top-3 input[type=text] { 
+			width: 430px;
+			height: 25px; 
+			position: relative;
+			top: -5px;
+		}
+		#top-3 input[type=button] { 
+			width: 40px;
+			height: 29px;
+			background-image: url(res/8.png);
+			border: none; 
+			position: relative;
+			top: 5px;
+			left: -4px;
+			border-top-right-radius:5px; 
+			border-bottom-right-radius:5px;
+		}
+		.top-4-1 { 
+			float: left;
+			font-size: 12px;
+			color:  #27a;
+			text-align: center;
+			padding:10px;
+		}
+		#top-5 { 
+			height: 20px;
+			margin: 5px auto; 
+			width: 1000px;
+		}
+		#top-4-5 { 
+			width: 100%;
+			border-top:1px solid rgb(228,234,236); 
+			margin-top: 5px; 
+		}
+		/* 身体部分 */
+		#shenti { 
+			width: 1000px;
+			height: 2500px;
+			margin: 20px auto;
+		}
+		#left { 
+			width: 600px; 
+			height: 100%; 
+			float: left;
+		}
+		#left-1 { 
+			width: 600px; 
+			height: 100%; 
+		}
+		#left1-1{ 
+			width: 400px;
+			height: 200px; 
+			margin-top: 20px;
+			float: left;
+		}
+		#left1-1 img{ 
+			width: 100px;
+			height: 140px;
+			float: left; 
+		}
+		#left1-2 { 
+			float: right; 
+			width: 190px;
+			height: 200px;
+			border-left: 1px solid lightgray;
+		}
+		#left1-2-1 { 
+			font-size: 12px;
+			margin-left: 15px; 
+		}
+		#divspan {  
+			float: left;
+			width: 200px;
+			margin-left: 20px; 
+			font-size: 13px;
+			line-height: 20px;
+		}
+		.s2 { 
+			color: rgb(27,119,197);
+		}
+		#left-1-2-6>.s3 { 
+			color: rgb(27,119,197); 
+		}
+		h2 span { 
+			color: gray; 
+			font-weight: bolder;
+		}
+		#left1-2-2 { 
+			width: 60px;
+			height: 40px;
+			float: left; 
+			font-size: 30px;
+			text-align: center;
+			line-height: 40px;
+		}
+		#left1-2-3 { 
+			width: 75px;
+			height: 15px; 
+			float: right;
+			margin-right: 35px;
+			background-image: url(res/ic_rating_m.png);
+			background-position:0px -15px; 
+			background-repeat: no-repeat;
+		}
+		#left1-2-4 { 
+			width: 80px;
+			height: 15px;
+			float: right;
+			margin-right: 30px; 
+			font-size: 10px;
+			margin-top: 7px;
+		}
+		#left1-2-5 { 
+			margin-top: 5px;
+			height: 45px;
+			margin-left: 15px; 
+		}
+		#jindu { 
+			width: 80px;
+			height: 12px;
+			background-color: rgb(255,205,128); 
+		}
+		#jindu2{ 
+			width: 50px;
+			height: 12px;
+			background-color: rgb(255,205,128); 
+		}
+		#jindu3{ 
+			width: 20px;
+			height: 12px;
+			background-color: rgb(255,205,128); 
+		}
+		#jindu4{ 
+			width: 5px;
+			height: 12px;
+			background-color: rgb(255,205,128); 
+		}
+		#jindu5{ 
+			width: 1px;
+			height: 12px;
+			background-color: rgb(255,205,128); 
+		}
+		.star1 { 
+			display: inline-block;
+			font-size: 12px; 
+		}
+		.star { 
+			margin-left: 15px; 
+		}
+		#left-1-2-6 { 
+			width: 150px; 
+			height: 50px; 
+			margin:15px;
+			border-top: 1px solid lightgray; 
+		}
+		#left-1-2-6 span{ 
+			font-size: 12px;
+			color: #666; 
+		}
+		#left1-2-4 span { 
+			color: rgb(27,119,197); 
+		}
+		/* 按钮和评星部分 */
+		.clear { 
+			clear: both; 
+		}
+		#btn { 
+			width: 600px;
+			height: 50px; 
+		}
+		#btn input { 
+			width: 60px;
+			height: 25px; 
+			border-radius: 3px;
+			background-color: rgb(244,219,199);
+			border:none;
+		}
+		.ping { 
+			width: 80px;
+			height: 16px; 
+			background-image: url(res/ic_rating_m.png);
+			background-size: 80px;
+			background-position: 0 16px;
+		}
+		.xing { 
+			width: 16px;
+			height: 16px;
+			float: left;
+			border-collapse: collapse;
+			background-image: url(res/star_hollow_hover.png);
+		}
+		#btn input, #btn span ,.ping { 
+			display: inline-block; 
+		}
+		#btn2 * { 
+			display: inline-block;
+			font-size: 12px; 
+			margin-right: 5px;
+		}
+		#btn2 input { 
+			width: 60px;
+			height: 25px;
+			border-radius: 3px; 
+			float: right;
+			background-color: rgb(239,247,238);
+			border:none;
+			color: rgb(62,133,90);
+		}
+		/* 文字部分 */
+		.text {  
+			margin-top: 20px; 
+		}
+		.text h3 { 
+			color: rgb(62,133,90);
+			line-height: 25px;
+			font-size: 16px; 
+		}
+		.text p{ 
+			font-size: 12px;
+			line-height: 18px;
+			text-indent: 2em;
+		}
+		h3 span { 
+			font-size: 12px;
+			color:rgb(38,97,106);
+		}
+		#imgdiv { 
+			width: 600px;
+			height: 100px;
+		}
+		#imgdiv div{
+			float: left;
+			height: 100px;
+		}
+		#img1 {
+			width:177px;
+			height:100px;
+			margin-right: 3px;
+		}
+		.imgs {
+			width:100px;
+			height: 100px;
+			margin-right: 5px;
+		}
+		.imgs:first-child img{ 
+			width: 180px;
+			height: 100px;
+		} 
+		.imgs { 
+			height: 80px;
+			width: 100px; 
+			float: right;
+		}
+		.s1 { 
+			color: rgb(38,97,106);
+		} 
+		#text1 span { 
+			font-size: 12px; 
+			line-height: 22px;
+		}
+		/* 图片部分 */
+		#imgs2 { 
+			width: 600px;
+			height: 600px;
+			margin-top: 20px;
+		}
+		#imgs2 img{ 
+			width: 100px;
+			height: 140px; 
+		}
+		#imgs2 h3 { 
+			color: rgb(62,133,90);
+			line-height: 25px;
+			font-size: 16px; 
+		}
+		.imgs2-1 { 
+			width: 100px;
+			height: 180px;
+			float: left;
+			margin-right: 20px;
+			margin-top: 10px; 
+		}
+		.imgs2-1 span{ 
+			display: block;
+			line-height: 40px;
+			text-align: center;
+			font-size: 12px;
+			color: #ccc;
+		}
+
+
+/* right */
+		#you { 
+			float: right;
+			height: 2000px;
+		}
+		#you1 { 
+			width: 300px;
+			height: 25px;
+			margin-top: 60px; 
+			margin-left: 70px;
+			background: #f2f7f6;
+			color: #27a;
+			padding: 10px;
+			line-height: 30px;
+		}
+		#you2 { 
+			width: 300px;
+			height: 25px;
+			background: #f6f3d3;
+			padding: 10px; 
+			margin-left: 70px;
+			margin-top: 20px;
+			text-align: center;
+		}
+		#input1 { 
+			width: 180px;
+			height: 20px; 
+		}
+		#select1 { 
+			width: 80px; 
+		}
+		#you3 { 
+			margin:20px 0 0 70px; 
+			width: 320px;
+			background: black;
+			height: 250px;
+		}
+		#you4 { 
+			margin:40px 0 0 70px; 
+			width: 260px;
+			background:#f2f7f6;
+			padding:20px 10px 20px 50px;  
+		}
+		#you4 h4 { 
+			font-size: 14px;
+			color: rgb(66,119,58); 
+			line-height: 30px;
+		}
+		#you4 li { 
+			font-size: 12px;
+			color: rgb(77,117,169); 
+			line-height: 20px;
+			list-style: none;
+		}
+		#tb2 { 
+			margin: 20px 0 0 70px; 
+		}
+		#tb2 td { 
+			width:300px ; 
+			padding: 10px 10px;
+			border-bottom: 1px solid rgb(218,218,218);
+			height: 14px;
+		}
+		.s4 { 
+			font-size: 14px;
+			color: black; 
+		}
+		.s5 { 
+			font-size: 10px;
+			color:rgb(77,117,169); 
+		}
+		.s6 { 
+			font-size: 10px;
+			color: black; 
+		}
+		#you-img { 
+			width:320px ;
+			margin:50px 0 0 70px; 
+			}
+		#you5 { 
+			padding: 10px 0px 10px 10px; 
+			height: 20px;
+			width: 310px;
+			margin:20px 0 0 70px;
+			background: #f2f7f6;
+			font-size: 12px;
+			color: rgb(77,117,169);
+			line-height: 20px;
+		}
+		#tb3 td{ 
+			width: 300px;
+			border-bottom: 1px solid rgb(233,233,233);
+			height: 50px; 
+		}
+		#tb3 #t3 { 
+			height: 100%;
+			line-height: 20px; 
+		}
+		#tb3 { 
+			margin: 20px 0 0 70px;
+		}
+		#tb3 h3 { 
+			font-size: 16px; 
+		}
+		#tb3 .s7 { 
+			font-size: 12px; 
+			color: rgb(77,117,169);
+			float: left;
+		}
+		#tb3 .s8 { 
+			font-size: 12px; 
+			float: right;
+		}
+		#tb3 .s9 { 
+			font-size: 10px; 
+			color: rgb(77,117,169)
+		}
+		#tb3 .s10 { 
+			font-size: 10px; 
+			color: black;
+		}
+		#d11 { 
+			width: 300px;
+			height: 20px;
+			margin: 20px 0;
+			padding: 5px;
+		}
+		#d11:hover { 
+			background:gray; 
+		}
+		#img-7,#img-8,#img-9 { 
+			width: 320px;
+			height: 100px;
+			margin: 20px 0 0 70px; 
+		}
+
+		span { 
+			color: gray; 
+		}
+		#c4 { 
+			background: #268dcd;
+			color: white;
+			border-radius: 3px; 
+		}
+		.lable1 { 
+			float: left; 
+			font-size: 14px;
+			color:gray;
+			margin-left: 10px;
+		}
+		.lable2 { 
+			float: right; 
+			font-size: 14px;
+			color:gray;
+			margin-left: 10px;
+		}
+		#d-input { 
+			height: 16px;
+			margin: 10px 0; 
+		}
+		.img-1 img { 
+			width: 140px;
+			height: 200px; 
+		}
+		.img-1 { 
+			width: 140px;
+			height: 250px;
+			float: left; 
+			margin: 5px;
+			position: relative;
+		}
+		.img-1 img+span {
+			display:block;
+			padding-top:10px;
+			text-align:center;
+			font-size: 14px;
+			color: #27a;
+		}
+		.img-2 { 
+			position:absolute;
+			top: 0;
+			left: 145px;
+			width: 300px;
+			height: 270px;
+			background:white;
+			border: 1px rgb(173,173,173) solid;
+			padding: 20px;
+			z-index: 9; 
+			display: none; 
+		}
+		.img-1:hover .img-2{ 
+			display: block; 
+		}
+		.img-2 h3 { 
+			color: #268dcd; 
+		}
+		.img-2 span { 
+			display: inline-block;
+			padding:5px 8px;
+			margin:5px;
+			background:rgb(242,242,242); 
+			height: 16px;
+			line-height: 16px;
+			font-size: 12px;
+			border-radius: 12px;
+		}
+		.img-2 div input {  
+			width: 50px;
+			height: 25px;
+			line-height:25px;
+			display:inline-block;
+			margin: 20px;
+			border-radius: 3px;
+			background: rgb(242,242,242);
+			border: 1px solid rgb(173,173,173);
+		}
+		#img-3 { 
+			width: 300px;
+			height: 30px; 
+			margin-top: 30px;
+			background: rgb(242,242,242);
+		}
+		#img-3 p { 
+			font-size: 14px; 
+		}
+		#load { 
+			width: 600px;
+			height: 50px;
+			background: rgb(242,242,242);
+			margin-top: 20px;
+			text-align: center;
+			line-height: 50px;
+			color: #27a;
+			font-size: 14px; 
+		}
+		.clear { 
+			clear: left; 
+		}
+		.biaoti { 
+			widows: 600px;
+			height: 50px;
+			margin-top: 20px; 
+		}
+		.biaoti h4 { 
+			float: left; 
+			display: inline-block;
+		}
+		.biaoti span { 
+			float: right; 
+		}
+		.tui { 
+			float: left; 
+		}
+		#tuijian { 
+			width: 600px;
+			height: 240px; 
+		}
+		.tui:last-child { 
+			width: 190px;
+			height: 180px; 
+			padding: 30px; 
+			background:rgb(242,242,242); 
+		}
+		.tui:last-child [name=s1] { 
+			font-size: 20px; 
+			color: black;
+		}
+		.tui:last-child [name=s2] { 
+			font-size: 14px;
+			color: rgb(153,153,153); 
+		}
+		#welcome span[name=s1] { 
+			font-size: 20px; 
+			color: black;
+		}
+		#welcome span[name=s2] { 
+			font-size: 13px; 
+			color: #27a;
+		}
+		#welcome { 
+			width: 600px;
+			padding: 15px;
+			margin-top: 10px; 
+		}
+		#t1 td { 
+			border-top: 1px lightgray solid; 
+			padding: 10px;
+			width: 560px;
+			height: 120px;
+		}
+		#t1 img { 
+			width: 68px;
+			height: 95px; 
+		}
+		.table2 { 
+			width: 450px;
+			height: 100px; 
+			margin-left: 20px;
+		}
+		.table1,.table2 { 
+			float: left; 
+		}
+		.table3 { 
+			font-size: 14px; 
+			color: #27a;
+		}
+		.table4 { 
+			font-size: 12px; 
+			color: #999;
+			display: inline-block;
+			padding: 8px 0;
+		}
+		.table5 { 
+			font-size: 12px; 
+			color: #666;
+		}
+
+	/* 底部 */
+		#dibu { 
+			width: 1000px; 
+			height: 90px;
+			margin: 20px auto;
+			border:1px solid black;
+		}
+		#dibu img { 
+			width: 1000px; 
+			height: 90px; 
+		}
+		#end{ 
+			width: 1000px; 
+			height: 30px;
+			margin: 30px auto; 
+			border-top: 1px dashed rgb(218,218,218);
+		} 
+		#span1 { 
+			float: left; 
+			font-size: 10px;
+		}
+		#span2 { 
+			float: right; 
+			font-size: 12px;
+			color: #27a;
+		}
+		#span1,#span2 { 
+			display:inline-block; 
+			margin-top: 10px; 
+		}
+		#totop { 
+			font-size: 60px; 
+			position: fixed;
+			left: 10px; 
+			bottom: 500px;
+			display: none; 
+		}
+	</style>
+</head>
+<body>
+	<!-- 头部 -->
+	<div id="top-1">
+		<div id="top-2">
+			<div class="top-2-1">豆瓣</div>
+			<div class="top-2-1">读书</div>
+			<div class="top-2-1">电影</div>
+			<div class="top-2-1">音乐</div>
+			<div class="top-2-1">同城</div>
+			<div class="top-2-1">小组</div>
+			<div class="top-2-1">阅读</div>
+			<div class="top-2-1">FM</div>
+			<div class="top-2-1">东西</div>
+			<div class="top-2-1">市集
+				<img src="res/new-market-tip.png" alt=""width="16px">
+			</div>
+			<div class="top-2-1">更多</div>
+				
+			<div class="top-2-2">注册</div>
+			<div class="top-2-2">登录</div>
+			<div class="top-2-2"name="kehuduan">下载客户端
+				<img src="res/5.png" alt="">
+			</div>
+		</div>
+		<div id="top-3">
+			<b>豆瓣电影</b>
+			<input type="text">
+			<input type="button"value="">
+		</div>
+		<div id="top-4">
+			<div id="top-4-5">
+				<div id="top-5">
+				<div class="top-4-1">影讯&购票</div>
+				<div class="top-4-1">选电影</div>
+				<div class="top-4-1">电视剧</div>
+				<div class="top-4-1">排行榜</div>
+				<div class="top-4-1">分类</div>
+				<div class="top-4-1">影评</div>
+				<div class="top-4-1">2015年度榜单</div>
+				<div class="top-4-1">豆瓣观影报告</div>
+			</div>
+			</div>
+			
+		</div>
+	</div>
+	<div id="shenti">
+		<div id="left">
+			<h2>试睡员48小时 <span>(2016)</span></h2>
+			<div id="left1">
+				<div id="left1-1">
+					<img src="res/p2401053344.jpg" alt="">
+					<div id="divspan">
+						<span>导演:</span> <span class="s2">郭奎永</span><br>
+						<span>编剧:</span> <span class="s2">黄吉 / 胡雅娟</span><br>
+						<span>主演:</span> <span class="s2">李天烨 / 李婉儿 / 程爽</span><br>
+						<span>类型:</span> <span class="s2">喜剧</span><br>
+						<span>制片国家/地区:</span class="s2"> <span>中国大陆</span><br>
+						<span>语言:</span> <span class="s2">汉语普通话</span><br>
+						<span>上映日期:</span> <span class="s2">2016-12-06(中国大陆)</span><br>
+						<span>片长:</span> <span class="s2">86分钟</span>
+					</div>
+				</div>
+				<div id="left1-2">
+					<div id="left1-2-1">豆瓣评分</div>
+					<div id="left1-2-5">
+						<div id="left1-2-2">8.7</div>
+						<div id="left1-2-3"></div>
+						<div id="left1-2-4"><span>181850人评价</span></div>	
+					</div>
+					<div class="star" id="star1">
+						<span  class="star1">5星</span>
+						<div  class="star1" id="jindu"></div>
+						<span  class="star1">51.7%</span>  
+					</div>
+					<div class="star" id="star2">
+						<span  class="star1">4星</span>
+						<div  class="star1" id="jindu2"></div>
+						<span  class="star1">34.5%</span>  
+					</div>
+					<div class="star" id="star3">
+						<span  class="star1">3星</span>
+						<div  class="star1" id="jindu3"></div>
+						<span  class="star1">12.1%</span>  
+					</div>
+					<div class="star" id="star4">
+						<span  class="star1">2星</span>
+						<div  class="star1" id="jindu4"></div>
+						<span  class="star1">1.2%</span>  
+					</div>
+					<div class="star" id="star5">
+						<span  class="star1">1星</span>
+						<div  class="star1" id="jindu5"></div>
+						<span  class="star1">0.4%</span>  
+					</div>
+					<div id="left-1-2-6"> 
+						<span>好于</span> <span class="s3">91% 动画片</span><br>
+						<span>好于</span> <span class="s3">97% 爱情片</span>
+					</div>
+					
+				</div>
+			</div>
+			<!-- 清除浮动 -->
+			<div class="clear"></div>
+			<!-- 按钮和评星 -->
+			<div id="btn">
+				<input type="button" value="想看">&nbsp;&nbsp;
+				<input type="button" value="看过">&nbsp;&nbsp;
+				<span>评价：</span>
+				<div class="ping">
+					<div class="xing"></div>
+					<div class="xing"></div>
+					<div class="xing"></div>
+					<div class="xing"></div>
+					<div class="xing"></div>
+				</div>
+			</div>
+			<div id="btn2">
+				<img src="res/short-comment.gif" alt="">
+				<span>写短评</span>
+				<img src="res/add-review.gif" alt="">
+				<span> 写影评</span>
+				<img src="res/add-doulist.gif" alt="">
+				<span>提问题</span>
+				<span>分享到</span>
+				<input type="button" value="推荐">
+			</div>
+			<div class="text">
+				<h3>你的名字。的剧情简介  ·  ·  ·  ·  ·  ·</h3>
+				<div><p>在远离大都会的小山村，住着巫女世家出身的高中女孩宫水三叶（上白石萌音 配音）。校园和家庭的原因本就让她充满烦恼，而近一段时间发生		的奇怪事件，又让三叶摸不清头脑。不知从何时起，三叶在梦中就会变成一个住在东京的高中男孩。那里有陌生的同学和朋友，有亲切的前辈和繁华	的街道，一切都是如此诱人而真实。另一方面，住在东京的高中男孩立花泷（神木隆之介 配音）则总在梦里来到陌生的小山村，以女孩子的身份过		着全新的生活。许是受那颗神秘彗星的影响，立花和三叶在梦中交换了身份。他们以他者的角度体验着对方的人生，这期间有愤怒、有欢笑也有暖心	。只是两人并不知道，身份交换的背后隐藏着重大而锥心的秘密…… <br>
+	　　				本片为2016年度日本本土影片票房冠军。 ©豆瓣</p>
+				</div>
+			</div>
+			<div class="text">
+				<h3>你的名字。的预告片和图片 · · · · · ·<span>( 预告片11 |  图片480 |  添加图片 )</span></h3>
+				<div id="imgdiv">
+					<div  id="img1"><img src="res/2401760724.jpg" style='height:100px;'></div>
+					<div class="imgs"><img src="res/p2401753223.jpg" alt=""></div>
+					<div class="imgs"><img src="res/p2388149950.jpg" alt=""></div>
+					<div class="imgs"><img src="res/p2376640643.jpg" alt=""></div>
+					<div class="imgs"><img src="res/p2293569209.jpg" alt=""></div>
+				</div>
+			</div>
+			<div class="text" id="text1">
+				<h3>你的名字。的获奖情况 · · · · · · <span>( 全部 )</span></h3>
+				<span class="s1">第44届动画安妮奖 </span><span>最佳导演(提名)</span><span class="s1">新海诚</span><br>
+				<span class="s1">第44届动画安妮奖</span><span>最佳独立动画长片(提名)</span><br> 
+				<span class="s1">第42届洛杉矶影评人协会奖</span><span>最佳动画片</span>
+			</div>
+			<div id="imgs2">
+				<h3>喜欢这部电影的人也喜欢 · · · · · ·</h3>
+				<div class="imgs2-1">
+					<img src="res/p465583562.jpg" alt="">
+					<span>小森林 夏秋篇</span>
+				</div>
+				<div class="imgs2-1">
+					<img src="res/p524964016.jpg" alt="">
+					<span>萤火之森</span>
+				</div>
+				<div class="imgs2-1">
+					<img src="res/p663036666.jpg" alt="">
+					<span>头脑特工队</span>
+				</div>
+				<div class="imgs2-1">
+					<img src="res/p982896012.jpg" alt="">
+					<span>言叶之庭</span>
+				</div>
+				<div class="imgs2-1">
+					<img src="res/p1272904657.jpg" alt="">
+					<span>秒速5厘米</span>
+				</div>
+				<div class="imgs2-1">
+					<img src="res/p1910830216.jpg" alt="">
+					<span>冰雪奇缘</span>
+				</div>
+				<div class="imgs2-1">
+					<img src="res/p1958733032.jpg" alt="">
+					<span>怦然心动</span>
+				</div>
+				<div class="imgs2-1">
+					<img src="res/p2166640945.jpg" alt="">
+					<span>千与千寻</span>
+				</div>
+				<div class="imgs2-1">
+					<img src="res/p2221319641.jpg" alt="">
+					<span>忠犬八公的故事</span>
+				</div>
+				<div class="imgs2-1">
+					<img src="res/p2266293606.jpg" alt="">
+					<span>飞屋环游记</span>
+				</div>
+
+			</div>
+		</div>
+
+
+<!-- right -->
+		<div id="you">
+			<div id="you1">
+				<li>豆瓣电影评分八问</li>
+			</div>
+			<div id="you2">
+				<select name="" id="select1">
+					<option value="">郑州</option>
+					<option value="">信阳</option>
+					<option value="">天津</option>
+					<option value="">杭州</option>
+					<option value="">黄山</option>
+				</select>&nbsp;&nbsp;
+				<input type="text" id="input1">
+			</div>
+			<div id="you3">
+				<img src="res/7.jpg" alt=""width="320px">
+			</div>
+			<div id="you4">
+				<h4>电影活动  · · · · · ·</h4>
+				<ul>
+					<li>·有奖 | 哪些无意之举引发了一场大混乱</li>
+					<li>·《邻家大贱谍》屌丝夫妻，有颜有笑</li>
+					<li>·【投票】11月定档大片，你想看哪部</li>
+				</ul>
+			</div>
+			<table id="tb2">
+				<tr>
+					<td>
+						<span class="s4">本周口碑榜</span>&nbsp;&nbsp;<span class="s5">更多榜单»</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">1</span>	<span class="s5">鹬</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">2</span>	<span class="s5">奇异博士</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">3</span>	<span class="s5">驴得水</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">4</span>	<span class="s5">洪水泛滥之前</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">5</span>	<span class="s5">将来的事</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">6</span>	<span class="s5">被挠</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">7</span>	<span class="s5">蜡笔小新：梦境世界大突击</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">8</span>	<span class="s5">请叫我英雄</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">9</span>	<span class="s5">离别是美丽的</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">10</span>	<span class="s5">愤怒</span>
+					</td>
+				</tr>
+			</table>
+			<div id="you-img">
+				<img src="res/37.jpg" alt=""width="320px">
+			</div>
+			<div id="you5">
+				> 通兑券换票
+			</div>
+			<table id="tb3">
+				<tr>
+					<td>
+						<h3>热门豆列</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s7">木卫二选择：新千年以来的年度十佳影片</span>  <span class="s8">1162推荐</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s7">【总】100部必看的经典爱情电影 </span>  <span class="s8">22推荐</span>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h3>合作联系</h3>
+					</td>
+				</tr>
+				<tr>
+					<td id="t3">
+						<span class="s9">申请开通影片小站<br>
+						申请开通电影院小站</span><br>
+						<span class="s10">咨询通兑券合作及购买<br>
+						邮箱：378364550@qq.com</span>
+
+						<div id="d11">
+							关注我们
+						</div>
+					</td>
+
+					
+				</tr>
+
+			</table>
+			<div id="img-7">
+				<img src="res/38.png" alt=""width="40px">&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="res/39.jpg" alt=""width="40px">&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="res/40.jpg" alt=""width="40px">&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="res/41.png" alt=""width="40px">
+			</div>
+			<div id="img-8">
+				<img src="res/43.png" alt=""width="320px">
+			</div>
+			<div id="img-9">
+				<img src="res/42.jpg" alt=""width="320px">
+			</div>
+
+
+		</div>
+	</div>
+	<!-- buttom -->
+	<div class="clear"></div>
+
+	<div id="dibu">
+		<img src="res/35.jpg" alt="">
+	</div>
+
+	<div id="end">
+		<span id="span1">© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司</span>
+		<span id="span2">关于豆瓣 · 在豆瓣工作 · 联系我们 · 免责声明 · 帮助中心 · 移动应用 · 豆瓣广告</span>
+	</div>
+
+	<div id="totop">⬆️</div>
+
+
+	
+</body>
+	<script>
+		var ping = document.querySelector(".ping");	
+		var xing1 = document.querySelectorAll(".xing")[0];
+		xing1.onclick = function (){
+			ping.style.backgroundPosition = "0px 80%,0px 0%";
+		}
+		var xing2 = document.querySelectorAll(".xing")[1];
+		xing2.onclick = function (){
+			ping.style.backgroundPosition = "0px 60%,0px 0%";
+		}
+		var xing3 = document.querySelectorAll(".xing")[2];
+		xing3.onclick = function (){
+			ping.style.backgroundPosition = "0px 40%,0px 0%";
+		}
+		var xing4 = document.querySelectorAll(".xing")[3];
+		xing4.onclick = function (){
+			ping.style.backgroundPosition = "0px 20%,0px 0%";
+		}
+		var xing5 = document.querySelectorAll(".xing")[4];
+		xing5.onclick = function (){
+			ping.style.backgroundPosition = "0px 0%,0px 0%";
+		}
+
+		var totop = document.querySelector("#totop");
+		var img = document.querySelector("#you-img");
+		window.addEventListener("scroll", function(){
+			if(window.scrollY>window.innerHeight){
+				totop.style.display = "block";
+				totop.onclick = function (){
+					window.scrollTo(0,0);
+					totop.style.display = "none";
+				}
+			}else {totop.style.display = "none"; }
+		});
+		
+
+
+	</script>
+</html>

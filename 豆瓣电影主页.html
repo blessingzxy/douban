@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>豆瓣电影</title>
+	<style>
+		* { 
+			margin:0;
+			padding: 0；
+		}
+		#d1{ 
+			width: 100%;
+			height: 145px;
+			background-color: rgb(240,243,245);
+		}
+		#d2{ 
+			width: 100%;
+			height: 30px;
+			background-color: rgb(84,86,82);
+			min-width: 1000px;
+		}
+		.c1{ 
+			float: left;
+			margin: 7px;
+			font-size: 14px;
+			padding: 1px;
+			height: 16px;
+			width: 30px;
+			text-align: center;
+			color: #999;
+		}
+		.c2 { 
+			width: 40px; 
+			float: right;
+			font-size: 14px; 
+			text-align: center;
+			margin: 7px;
+			color: #999;
+		}
+		#d4{ 
+			width: 100px;
+		}
+		#d4>img { 
+			position:relative;
+			left: -80px;
+			top: 11px; 
+			display: none;
+		}
+		#d3 { 
+			position: relative;
+		}
+		#d3 img { 
+			position: absolute; 
+			left:30px;top: -6px; 
+		}
+
+		#biaoti { 
+			margin: 20px; 
+		}
+		#zhuti { 
+			width: 1000px; 
+			height: 100%;
+			margin: 10px auto;
+		}
+		#zuo { 
+			width: 600px; 
+			height: 100%;
+			margin-top: 30px;
+		}
+		#d5 {
+			border-top:1px solid lightgray; 
+			padding: 10px;
+			width: 580px;
+			height: 260px; 
+		}
+		.c3 { 
+			float: left; 
+			margin: 7px; 
+			text-align: center;
+		}
+		.c3 img { 
+			width: 130px; 
+			height: 181px;
+		}
+		.s2 { 
+			font-size: 14px;
+			color: #37a;
+		}
+		.s1 { 
+			font-size: 20px;
+			color: black; 
+		}
+		.i1 { 
+			width: 70px;
+			height: 25px;
+			background: #268dcd;
+			border-radius: 3px; 
+			color: white;
+			border: none;
+		}
+		#d6 { 
+			margin-top: 20px; 
+			width: 600px;
+			height:100%; 
+			border-bottom:1px solid lightgray; 
+		}
+		#d7 { 
+			border-bottom: 1px solid lightgray;
+			height: 80px;
+		}
+		.c4 {  
+			padding: 10px 10px;
+			float: left;
+		} 
+		#d4:hover img { 
+			display: block; 
+		}
+		.c1:hover,.c2:hover { 
+			color: #ccc; 
+			cursor: pointer;
+		}
+		
+		#d8 { 
+			width: 1000px; 
+			height: 50px;
+			margin-top:17px;
+			margin-left:300px ;
+			text-align: center; 
+		}
+		#d8 img,#d8 input[type=text],#d8 input[type=button] {
+			float: left;
+		}
+		#d8 img { 
+			position: relative;
+			top: -12px; 
+		}
+		#d8 input[type=text] { 
+			width: 450px;
+			height: 30px;
+			border-radius: 5px;
+			border: 0.5px solid rgb(199,199,199);
+		}
+		#d8 input[type=button] { 
+			position: relative; 
+			height: 31px;
+			width: 38px;
+			background-image: url(res/8.png);
+			border: none;left: -3px;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+		.c4 { 
+			float: left;
+			font-size: 14px; 
+			color: #27a;
+		}
+		#d9 { 
+			width: 100%; 
+			border-top: 1px solid lightgray;
+			padding: 5px;
+		}
+		#d10 { 
+			height: 35px;
+			width: 600px; 
+			margin-left: 300px;
+		}
+
+		#you,#zuo { 
+			float: left; 
+		}
+		#you1 { 
+			width: 300px;
+			height: 25px;
+			margin-top: 60px; 
+			margin-left: 70px;
+			background: #f2f7f6;
+			color: #27a;
+			padding: 10px;
+			line-height: 30px;
+		}
+		#you2 { 
+			width: 300px;
+			height: 25px;
+			background: #f6f3d3;
+			padding: 10px; 
+			margin-left: 70px;
+			margin-top: 20px;text-align: center;
+		}
+		#input1 { 
+			width: 180px;
+			height: 20px; 
+		}
+		#select1 { 
+			width: 80px; 
+		}
+		#you3 { 
+			margin:20px 0 0 70px; 
+			width: 320px;
+			background: black;
+			height: 250px;
+		}
+		#you4 { 
+			margin:40px 0 0 70px; 
+			width: 260px;
+			background:#f2f7f6;
+			padding:20px 10px 20px 50px;  
+		}
+		#you4 h4 { 
+			font-size: 14px;
+			color: rgb(66,119,58);
+			line-height: 30px;
+		}
+		#you4 li { 
+			font-size: 12px;
+			color: rgb(77,117,169); 
+			line-height: 20px;
+			list-style: none;
+		}
+		#tb2 { 
+			margin: 20px 0 0 70px; 
+		}
+		#tb2 td { 
+			width:300px ; 
+			padding: 10px 10px;
+			border-bottom: 1px solid rgb(218,218,218);
+			height: 14px;
+		}
+		.s4 { 
+			font-size: 14px;
+			color: black; 
+		}
+		.s5 { 
+			font-size: 10px;
+			color:rgb(77,117,169) ; 
+		}
+		.s6 { 
+			font-size: 10px;
+			color: black; 
+		}
+		#you-img { 
+			width:320px ;
+			margin:50px 0 0 70px;  
+		}
+		#you5 { 
+			padding: 10px 0px 10px 10px; 
+			height: 20px;
+			width: 310px;
+			margin:20px 0 0 70px;
+			background: #f2f7f6;
+			font-size: 12px; 
+			color: rgb(77,117,169);
+			line-height: 20px;
+		}
+		#tb3 td{ width: 300px;
+			border-bottom: 1px solid rgb(233,233,233);
+			height: 50px; 
+		}
+		#tb3 #t3 { 
+			height: 100%;
+			line-height: 20px; 
+		}
+		#tb3 { 
+			margin: 20px 0 0 70px;
+		}
+		#tb3 h3 { 
+			font-size: 16px; 
+		}
+		#tb3 .s7 { 
+			font-size: 12px; 
+			color: rgb(77,117,169);
+			float: left;
+		}
+		#tb3 .s8 { 
+			font-size: 12px; 
+			float: right;
+		}
+		#tb3 .s9 { 
+			font-size: 10px; 
+			color: rgb(77,117,169)
+		}
+		#tb3 .s10 { 
+			font-size: 10px; 
+			color: black;
+		}
+		#d11 { 
+			width: 300px;
+			height: 20px;
+			margin: 20px 0;
+			padding: 5px;
+			}
+		#d11:hover { 
+			background:gray; 
+		}
+		#img-7,#img-8,#img-9 { 
+			width: 320px;
+			height: 100%;
+			margin: 20px 0 0 70px; 
+		}
+		span { 
+			color: gray; 
+		}
+		#c4 { 
+			background: #268dcd;
+			color: white;
+			border-radius: 3px; 
+		}
+		.lable1 { 
+			float: left; 
+			font-size: 14px;
+			color:gray;
+			margin-left: 10px;
+		}
+		.lable2 { 
+			float: right; 
+			font-size: 14px;
+			color:gray;
+			margin-left: 10px;
+		}
+		#d-input { 
+			height: 16px;
+			margin: 10px 0; 
+		}
+		.img-1 img { 
+			width: 140px;
+			height: 200px; 
+		}
+		.img-1 { 
+			width: 140px;
+			height: 250px;
+			float: left; 
+			margin: 5px;
+			position: relative;
+		}
+		.img-1 img+span{
+			display:block;
+			padding-top:10px;
+			text-align:center;
+			font-size: 14px;
+			color: #27a;
+		}
+		.img-2 { 
+			position:absolute;
+			top: 0;
+			left: 145px;
+			width: 300px;
+			height: 270px;
+			background:white;
+			border: 1px rgb(173,173,173) solid;
+			padding: 20px;
+			z-index: 9; 
+			display: none; 
+		}
+		.img-1:hover .img-2{ 
+			display: block; 
+		}
+		.img-2 h3 { 
+			color: #268dcd; 
+		}
+		.img-2 span { 
+			display: inline-block;
+			padding:5px 8px;
+			margin:5px;
+			background:rgb(242,242,242); 
+			height: 16px;
+			line-height: 16px;
+			font-size: 12px;
+			border-radius: 12px;
+		}
+		.img-2 div input {  
+			width: 50px;
+			height: 25px;
+			line-height:25px;
+			display:inline-block;
+			margin: 20px;
+			border-radius: 3px;
+			background: rgb(242,242,242);
+			border: 1px solid rgb(173,173,173);
+		}
+		#img-3 { 
+			width: 300px;
+			height: 30px;
+			margin-top: 30px;
+			background: rgb(242,242,242);
+		}
+		#img-3 p { 
+			font-size: 14px; 
+		}
+		#load { 
+			width: 600px;
+			height: 50px;
+			background: rgb(242,242,242);
+			margin-top: 20px;
+			text-align: center;
+			line-height: 50px;
+			color: #27a;
+			font-size: 14px; 
+		}
+		.clear { 
+			clear: left; 
+		}
+		.biaoti { 
+			widows: 600px;
+			height: 50px;
+			margin-top: 20px; 
+		}
+		.biaoti h4 { 
+			float: left; 
+			display: inline-block;
+		}
+		.biaoti span { 
+			float: right; 
+		}
+		.tui { 
+			float: left; 
+		}
+		#tuijian { 
+			width: 600px;height: 240px; 
+		}
+		.tui:last-child { 
+			width: 190px;
+			height: 180px; 
+			padding: 30px; 
+			background:rgb(242,242,242); 
+		}
+		.tui:last-child [name=s1] { 
+			font-size: 20px; 
+			color: black;
+		}
+		.tui:last-child [name=s2] { 
+			font-size: 14px;
+			color: rgb(153,153,153); 
+		}
+		#welcome span[name=s1] { 
+			font-size: 20px; 
+			color: black;
+		}
+		#welcome span[name=s2] { 
+			font-size: 13px; 
+			color: #27a;
+		}
+		#welcome { 
+			width: 600px;
+			padding: 15px;
+			margin-top: 10px; 
+		}
+		#t1 td { 
+			border-top: 1px lightgray solid; 
+			padding: 10px;
+			width: 560px;
+			height: 120px;
+		}
+		#t1 img { 
+			width: 68px;
+			height: 95px; 
+		}
+		.table2 { 
+			width: 450px;
+			height: 100px; 
+			margin-left: 20px;
+		}
+		.table1,.table2 { 
+			float: left; 
+		}
+		.table3 { 
+			font-size: 14px; 
+			color: #27a;
+		}
+		.table4 { 
+			font-size: 12px; 
+			color: #999;
+			display: inline-block;
+			padding: 8px 0;
+		}
+		.table5 { 
+			font-size: 12px;
+			color: #666;
+		}
+		#dibu { 
+			width: 1000px; 
+			height: 90px; 
+			background: black;
+			margin: 20px auto;
+		}
+		#dibu img { 
+			width: 1000px; 
+			height: 90px; 
+		}
+		#end{ 
+			width: 1000px; 
+			height: 30px;
+			margin: 30px auto; 
+			border-top: 1px dashed rgb(218,218,218);
+		} 
+		#span1 { 
+			float: left; 
+			font-size: 10px;
+		}
+		#span2 { 
+			float: right; 
+			font-size: 12px;
+			color: #27a;
+		}
+		#span1,#span2 { 
+			display:inline-block; 
+			margin-top: 10px; 
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 导航栏	 -->
+	<div id="d1">
+		<div id="d2">
+			<div class="c1">豆瓣</div>
+			<div class="c1">读书</div>
+			<div class="c1">电影</div>
+			<div class="c1">音乐</div>
+			<div class="c1">同城</div>
+			<div class="c1">小组</div>
+			<div class="c1">阅读</div>
+			<div class="c1">FM</div>
+			<div class="c1">东西</div>
+			<div class="c1" id="d3">市集
+			<img src="res/new-market-tip.png" alt="" width="17px">
+			</div>
+			<div class="c1">更多</div>
+
+			<div class="c2">登录</div>
+			<div class="c2">注册</div>
+			<div class="c2" id="d4">下载豆瓣客户端
+				<img src="res/5.png" alt="">
+			</div>
+			
+			
+		</div>
+		<div id="d8">
+			<img src="res/6.png" alt="" width="140px" height="50px"><input type="text" placeholder="电影,影人,影院,电视剧"><input type="button">
+		</div>
+		<div id="d9">
+			<div id="d10">
+				<div class="c4">影讯&购票</div>
+				<div class="c4">选电影</div>
+				<div class="c4">电视剧</div>
+				<div class="c4">排行榜</div>
+				<div class="c4">分类</div>
+				<div class="c4">影评</div>
+				<div class="c4">2016年度榜单</div>
+				<div class="c4">豆瓣观影报告</div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- 主体部分 -->
+	<div id="zhuti">
+		<div id="zuo">
+			<div id="biaoti">
+				<span class="s1">正在热映</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s2">全部正在热映»&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;即将上映»&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 / 7</span>
+			</div>
+			<div id="d5">
+				<div class="c3" >
+					<img src="res/p2380681527.jpg" alt=""><br><br>
+					<span>奇异博士</span><br><br>
+					<input type="submit" value="选座购票" class="i1">
+				</div>
+				<div class="c3">
+					<img src="res/p2390833166.jpg" alt=""><br><br>
+					<span>非常父子档</span><br><br>
+					<input type="submit" value="选座购票" class="i1">
+				</div>
+				<div class="c3">
+					<img src="res/p2393776153.jpg" alt=""><br><br>
+					<span>魔法精灵</span><br><br>
+					<input type="submit" value="选座购票" class="i1">
+				</div>
+				<div class="c3">
+					<img src="res/p2394863337.jpg" alt=""><br><br>
+					<span>从你的全世界路过</span><br><br>
+					<input type="submit" value="选座购票" class="i1">
+				</div>
+			</div>
+			<div id="d6">
+				<img src="res/9a6c72798249e1d.jpg" alt="">
+				<br><br>
+				<h3>选电影  /  选电视剧</h3><br>
+			</div>
+			<div id="d7">
+				<span class="c4" id="c4">热门</span>
+				<span class="c4">最新</span>
+				<span class="c4">经典</span>
+				<span class="c4">可播放</span>
+				<span class="c4">豆瓣高分</span>
+				<span class="c4">冷门佳片</span>
+				<span class="c4">华语</span>
+				<span class="c4">欧美</span>
+				<span class="c4">韩国</span>
+				<span class="c4">日本</span>
+				<span class="c4">动作</span>
+				<span class="c4">喜剧</span>
+				<span class="c4">爱情</span>
+				<span class="c4">科幻</span>
+				<span class="c4">悬疑</span>
+				<span class="c4">恐怖</span>
+				<span class="c4">治愈</span>
+			</div>
+			<div id="d-input">
+				<input type="radio"name="paixu" class="lable1"><label for="redu"class="lable1"class="lable1">按热度排序</label>
+				<input type="radio"name="paixu" class="lable1"><label for="shijian"class="lable1">按时间排序</label>
+				<input type="radio"name="paixu" class="lable1"><label for="pingjia"class="lable1">按评价排序</label>
+				<label for=""class="lable2">我没看过的</label><input type="checkbox" class="lable2">
+				<label for=""class="lable2">可在线播放</label><input type="checkbox" class="lable2">
+			</div>
+			<div>
+				<div class="img-1">
+					<img src="res/10.jpg" alt="" class="img1"><span>香肠派对</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/11.jpg" alt=""><span>追凶者也</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/12.jpg" alt=""><span>呼唤青春</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/13.jpg" alt=""><span>将来的事</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/14.jpg" alt=""><span>恐吓运动</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/15.jpg" alt=""><span>死亡占卜</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/16.jpg" alt=""><span>丘奇先生</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/17.jpg" alt=""><span>网</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/18.jpg" alt=""><span>请叫我英雄</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/19.jpg" alt=""><span>阿修罗</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/20.jpg" alt=""><span>你的名字</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/21.jpg" alt=""><span>屏住呼吸</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/22.jpg" alt=""><span>她</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/23.jpg" alt=""><span>九条命</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/24.jpg" alt=""><span>神奇队长</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/25.jpg" alt=""><span>瑞士军刀男</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/26.jpg" alt=""><span>玩命直播</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/27.jpg" alt=""><span>咖啡公社</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/28.jpg" alt=""><span>釜山行</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+				<div class="img-1">
+					<img src="res/29.jpg" alt=""><span>大鱼海棠</span>
+					<div class="img-2">
+						<h3>香肠派对 Sausage Party (2016)</h3>
+						<span>89分钟</span>
+						<span>美国</span>
+						<span>喜剧</span>
+						<span>动画</span>
+						<span>冒险</span>
+						<span>康拉德·弗农(导演)</span>
+						<span>塞斯·罗根克里斯汀·韦格詹姆斯·弗兰科</span>
+						<div>
+							<input type="button" value="想看">
+							<input type="button" value="看过">
+						</div>
+						<div id="img-3">
+							<p>看完之后暂时不想吃东西[微笑]---Edward Norton的配音也太好了吧！ - 卡瑞尔的短评</p>
+						</div>
+
+						
+   					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div id="load">
+				加载更多
+			</div>
+			<div class="biaoti">
+				<h4>热门推荐</h4> <span>3/6</span>
+			</div>
+			<div id="tuijian">
+				<div class="tui">
+					<img src="res/30.jpg" alt="">
+				</div>
+				
+				<div class="tui">
+					<span name="s1"><br>投票|璀璨11月！你会去看哪一部？</span><br><br><br><br>
+					<span name="s2">随着多部大片定档，11月突然变得熠熠生辉，令人无限期待！你会去影院支持哪部影片呢？</span>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div id="welcome">
+				<span name="s1">最受欢迎的影评</span>&nbsp;&nbsp;&nbsp;  <span name="s2">更多热门影评» &nbsp;&nbsp;&nbsp;新片影评»</span>
+			</div>
+			<table id="t1">
+				<tr>
+					<td>
+						<div class="table1">
+							<img src="res/31.jpg" alt="">
+						</div>
+						<div class="table2">
+							<span class="table3">开兰博基尼的时候别玩手机</span><br>
+							<span class="table4">凌睿 评论 《奇异博士》</span> <br>
+							<span class="table5">1.本片教育我们：开兰博基尼的时候别玩手机。 对此我丝毫不担心，因为我根本买不起兰博基尼。
+							2.这是一个忧伤的故事，男主被女主甩了不说，双手还特么坏掉了。 3.得知卷福被女主甩了并且双手还坏掉的消息，隔...</span> <span class="table3">(全文)</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="table1">
+							<img src="res/32.jpg" alt="">
+						</div>
+						<div class="table2">
+							<span class="table3">画犬不成反类豚——翻拍片的热度是该降一降了</span><br>
+							<span class="table4">电影那件小事 评论 《捉迷藏》 </span> <br>
+							<span class="table5">最开始传刘杰要翻拍捉迷藏，我是不支持也不反对的，虽然韩版捉迷藏本身就不怎么样，剧情都是套路不说，还一堆BUG，在一众惊悚犯罪片中，只能算勉强合格，远远达不到精品的程度被选中翻拍。 但这只是人的惯性思路...</span> <span class="table3">(全文)</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="table1">
+							<img src="res/33.jpg" alt="">
+						</div>
+						<div class="table2">
+							<span class="table3">抛开王凯不谈，《如果蜗牛有爱情》是部好剧</span><br>
+							<span class="table4">Floflo 评论 《如果蜗牛有爱情》</span> <br>
+							<span class="table5">首先说明为何抛开王凯不谈，原因很简单，因为我是他的粉丝，话匣子一打开怕收不住，说好的剧评变成不知羞耻的花痴文。所以，王凯在此剧中的表现，宝宝心里甜，宝宝不说。 看完七八九集，今晚有两件事情让我寝食...</span> <span class="table3">(全文)</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="table1">
+							<img src="res/31.jpg" alt="">
+						</div>
+						<div class="table2">
+							<span class="table3">《黄克功案件》——这只是历史的选择</span><br>
+							<span class="table4">suvern 评论 《黄克功案件》 </span> <br>
+							<span class="table5">鉴于我很少看这种类型的电影所以也说不出什么太专业的评价，随便说点感想。 在看电影之前我没有了解过这个案子，看完之后百度了一下案件，也是传言纷纷，如果想拍成纯教育片或搞噱头的电影的话也不是不可以，只是...</span> <span class="table3">(全文)</span>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+
+
+
+
+
+
+		</div>
+		<div id="you">
+			<div id="you1">
+				<li>豆瓣电影评分八问</li>
+			</div>
+			<div id="you2">
+				<select name="" id="select1">
+					<option value="">郑州</option>
+					<option value="">信阳</option>
+					<option value="">天津</option>
+					<option value="">杭州</option>
+					<option value="">黄山</option>
+				</select>&nbsp;&nbsp;
+				<input type="text" id="input1">
+			</div>
+			<div id="you3">
+				<img src="res/7.jpg" alt=""width="320px">
+			</div>
+			<div id="you4">
+				<h4>电影活动  · · · · · ·</h4>
+				<ul>
+					<li>·有奖 | 哪些无意之举引发了一场大混乱</li>
+					<li>·《邻家大贱谍》屌丝夫妻，有颜有笑</li>
+					<li>·【投票】11月定档大片，你想看哪部</li>
+				</ul>
+			</div>
+			<table id="tb2">
+				<tr>
+					<td>
+						<span class="s4">本周口碑榜</span>&nbsp;&nbsp;<span class="s5">更多榜单»</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">1</span>	<span class="s5">鹬</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">2</span>	<span class="s5">奇异博士</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">3</span>	<span class="s5">驴得水</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">4</span>	<span class="s5">洪水泛滥之前</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">5</span>	<span class="s5">将来的事</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">6</span>	<span class="s5">被挠</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">7</span>	<span class="s5">蜡笔小新：梦境世界大突击</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">8</span>	<span class="s5">请叫我英雄</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">9</span>	<span class="s5">离别是美丽的</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s6">10</span>	<span class="s5">愤怒</span>
+					</td>
+				</tr>
+			</table>
+			<div id="you-img">
+				<img src="res/37.jpg" alt=""width="320px">
+			</div>
+			<div id="you5">
+				> 通兑券换票
+			</div>
+			<table id="tb3">
+				<tr>
+					<td>
+						<h3>热门豆列</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s7">木卫二选择：新千年以来的年度十佳影片</span>  <span class="s8">1162推荐</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="s7">【总】100部必看的经典爱情电影 </span>  <span class="s8">22推荐</span>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h3>合作联系</h3>
+					</td>
+				</tr>
+				<tr>
+					<td id="t3">
+						<span class="s9">申请开通影片小站<br>
+						申请开通电影院小站</span><br>
+						<span class="s10">咨询通兑券合作及购买<br>
+						邮箱：378364550@qq.com</span>
+
+						<div id="d11">
+							关注我们
+						</div>
+					</td>
+
+					
+				</tr>
+
+			</table>
+			<div id="img-7">
+				<img src="res/38.png" alt=""width="40px">&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="res/39.jpg" alt=""width="40px">&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="res/40.jpg" alt=""width="40px">&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src="res/41.png" alt=""width="40px">
+			</div>
+			<div id="img-8">
+				<img src="res/43.png" alt=""width="320px">
+			</div>
+			<div id="img-9">
+				<img src="res/42.jpg" alt=""width="320px">
+			</div>
+
+
+		</div>
+	</div>
+
+	<!-- 底部 -->
+	<div class="clear"></div>
+	<div id="dibu">
+		<img src="res/35.jpg" alt="">
+	</div>
+
+	<div id="end">
+		<span id="span1">© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司</span>
+		<span id="span2">关于豆瓣 · 在豆瓣工作 · 联系我们 · 免责声明 · 帮助中心 · 移动应用 · 豆瓣广告</span>
+	</div>
+
+
+</body>
+</html>
